@@ -1,0 +1,32 @@
+.wrapper {
+	width: var(--width-container-a1);
+	min-height: calc(100vh);
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	padding-top: 90px;
+}
+
+.section {
+	padding: 10px;
+}
+
+.text {
+	font-weight: 400;
+	color: var(--color-grey-a2);
+	font-size: var(--font-size-a2);
+
+	@media (max-width: 600px) {
+		font-size: var(--font-size-a3);
+	}
+}
+
+.time {
+	font-weight: 600;
+	color: var(--color-blue-a1);
+	font-size: var(--font-size-a2);
+
+	@media (max-width: 600px) {
+		font-size: var(--font-size-a3);
+	}
+}
