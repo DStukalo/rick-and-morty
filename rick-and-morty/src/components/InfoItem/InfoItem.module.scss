@@ -1,10 +1,10 @@
 .info__item {
-	padding-left: 16px;
+	padding-left: 26px;
 	width: 100%;
 	position: relative;
 
 	@media (max-width: 600px) {
-		width: 90%;
+		padding-left: 10px;
 	}
 
 	&::after {
@@ -12,14 +12,14 @@
 		position: absolute;
 		bottom: 0;
 		right: 0;
-		width: calc(100% - 16px);
+		width: calc(100% - 26px);
 		height: 1px;
 		background: var(--color-grey-a3);
 		mix-blend-mode: normal;
 	}
 
 	&_header {
-		padding-top: 9px;
+		padding-top: 7.5px;
 		font-size: var(--font-size-a4);
 		font-weight: 700;
 		letter-spacing: 0.15px;

@@ -1,5 +1,5 @@
 .search {
-	margin-bottom: 51px;
+	margin-bottom: 65px;
 	width: var(--width-container-a2);
 	box-sizing: border-box;
 	position: relative;
@@ -16,6 +16,10 @@
 
 	@media (max-width: 1399.99px) {
 		width: max(90%, 280px);
+	}
+
+	@media (max-width: 600px) {
+		margin-bottom: 32px;
 	}
 
 	& input {

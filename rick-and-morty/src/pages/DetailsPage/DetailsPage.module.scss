@@ -5,7 +5,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding-top: 76px;
+	padding-top: 71px;
 	padding-bottom: 142px;
 
 	@media (max-width: 1399.99px) {
@@ -19,13 +19,14 @@
 }
 
 .avatar {
-	margin-bottom: 16px;
-	margin-left: -4%;
-	width: 300px;
+	margin-bottom: 4px;
+	margin-left: -2%;
+	width: 310px;
 
 	@media (max-width: 600px) {
+		margin-bottom: 14px;
 		margin-left: 0;
-		width: 150px;
+		width: 160px;
 	}
 
 	& img {
@@ -37,6 +38,8 @@
 
 .title {
 	margin-bottom: 48px;
+	width: 500px;
+	text-align: center;
 	font-size: var(--font-size-a1);
 	font-weight: 400;
 	color: var(--color-blue-a1);
@@ -52,11 +55,12 @@
 	width: 413px;
 
 	@media (max-width: 600px) {
-		width: max(80%, 280px);
+		width: max(85%, 280px);
 	}
 
 	&__title {
 		margin-bottom: 48px;
+		width: 100%;
 		font-size: var(--font-size-a2);
 		text-align: center;
 		color: var(--color-grey-a1);
@@ -71,7 +75,7 @@
 .return {
 	position: absolute;
 	top: 20px;
-	left: 51px;
+	left: 116px;
 	font-family: "Karla", sans-serif;
 	font-weight: 700;
 	font-size: (--font-size-a3);
@@ -79,10 +83,10 @@
 	text-transform: uppercase;
 	background: inherit;
 	border: none;
-	transition: all 1s ease-out;
+	transition: all 0.2s ease-out;
 
 	@media (max-width: 600px) {
-		left: 21px;
+		left: 51px;
 	}
 
 	&::after {
@@ -91,7 +95,7 @@
 		width: 24px;
 		height: 24px;
 		top: 2px;
-		left: -16px;
+		left: -21px;
 		background-image: url("../../../public/arrow_back.png");
 		background-repeat: no-repeat;
 	}

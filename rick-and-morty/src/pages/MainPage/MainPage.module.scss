@@ -19,12 +19,14 @@
 
 .logo {
 	margin-bottom: 16px;
+	margin-left: 20px;
 	width: var(--width-container-a3);
 	height: 200px;
 	background-image: url("../../../public/r&k_desktop.png");
 
 	@media (max-width: 600px) {
-		margin-bottom: 32px;
+		margin-bottom: 36px;
+		margin-left: 0;
 		width: 312px;
 		height: 104px;
 		background-image: url("../../../public/r&k_mobile.png");
