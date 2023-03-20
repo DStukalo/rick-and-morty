@@ -1,0 +1,27 @@
+:root {
+	--width-container-a1: 1440px;
+	--width-container-a2: 1020px;
+	--width-container-a3: 600px;
+
+	--font-size-a1: 48px;
+	@media (max-width: 600px) {
+		--font-size-a1: 32px;
+	}
+	--font-size-a2: 20px;
+	--font-size-a3: 18px;
+	--font-size-a4: 16px;
+	--font-size-a5: 14px;
+
+	--color-white-a1: #f2f2f7;
+	--color-black-a1: #000000de;
+	--color-black-a2: #00000099;
+	--color-blue-a1: #081f32;
+	--color-blue-a2: #00b0c8;
+	--color-grey-a1: #8e8e93;
+	--color-grey-a2: #6e798c;
+	--color-grey-a3: rgba(33, 33, 33, 0.08);
+	--color-grey-a4: rgba(0, 0, 0, 0.5);
+	--color-grey-a5: rgba(0, 0, 0, 0.2);
+	--color-grey-a6: rgba(0, 0, 0, 0.14);
+	--color-grey-a7: rgba(0, 0, 0, 0.12);
+}
