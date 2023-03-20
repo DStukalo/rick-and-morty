@@ -1,0 +1,29 @@
+.wrapper {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	background-color: var(--color-grey-a5);
+}
+
+.loader {
+	position: absolute;
+	top: calc(50% - 50px);
+	left: 50%;
+	border: 12px solid var(--color-white-a1);
+	border-top: 12px solid var(--color-blue-a2);
+	border-radius: 50%;
+	width: 80px;
+	height: 80px;
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
