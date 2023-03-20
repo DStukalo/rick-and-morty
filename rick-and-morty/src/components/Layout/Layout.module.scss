@@ -1,0 +1,37 @@
+.btn {
+	position: absolute;
+	top: 15px;
+	right: 51px;
+	background: none;
+
+	@media (max-width: 600px) {
+		right: 21px;
+	}
+}
+
+.btn_auth {
+	padding: 5px;
+	border: 1px solid var(--color-blue-a2);
+	border-radius: 3px;
+	transition: all 0.2s ease-out;
+
+	&:hover {
+		cursor: pointer;
+		background-color: var(--color-blue-a2);
+	}
+}
+
+.authenticating {
+	border: none;
+}
+
+.text {
+	font-family: "Karla", sans-serif;
+	font-size: (--font-size-a2);
+	color: var(--color-black-a1);
+	transition: all 0.2s ease-out;
+
+	.btn_auth &:hover {
+		text-decoration: solid underline var(--color-black-a2) 1px;
+	}
+}
