@@ -1,10 +1,14 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './NotFoundPage.module.scss';
 
 export function NotFoundPage() {
 	const [second, setSecond] = useState(5);
 	const navigate = useNavigate();
+
+	useEffect(() => {
+		document.title = '404 || Not Found';
+	}, []);
 
 	function tic(): void {
 		if (second > 0) setSecond(second - 1);
