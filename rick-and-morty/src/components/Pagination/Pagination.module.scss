@@ -1,0 +1,26 @@
+.pagination {
+	margin: 0 auto;
+	width: 300px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.button {
+	padding: 5px;
+	border-radius: 3px;
+	background-color: none;
+}
+
+.prev,
+.next {
+	padding: 5px;
+	border-radius: 3px;
+	background-color: var(--color-grey-a3);
+	transition: all 0.3s ease;
+	cursor: pointer;
+
+	&:hover {
+		background-color: var(--color-blue-a2);
+	}
+}
