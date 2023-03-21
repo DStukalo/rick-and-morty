@@ -4,12 +4,13 @@ import firebase from 'firebase/compat/app';
 import { Providers, auth } from '../../config/firebase';
 import { SignInWithSocialMedia } from '../../modules/auth';
 import styles from './Layout.module.scss';
+import { ScrollBtn } from '../ScrollBtn/ScrollBtn';
 
 export function Layout() {
 	const [authenticating, setAuthenticating] = useState<boolean>(false);
 	const [showAuth, setShowAuth] = useState<boolean>(true);
-
 	const [error, setError] = useState<string>('');
+	const nameLinkToAuth = (auth.currentUser && authenticating) ? `Hello ${auth.currentUser.displayName}` : 'Authentication';
 
 	function signInWithSocialMedia(provider: firebase.auth.AuthProvider) {
 		if (error !== '') setError('');
@@ -27,7 +28,7 @@ export function Layout() {
 				setError(err.message);
 			});
 	}
-	const nameLinkToAuth = (auth.currentUser && authenticating) ? `Hello ${auth.currentUser.displayName}` : 'Authentication';
+
 	return (
 		<>
 			<header className={styles.header}>
@@ -46,6 +47,7 @@ export function Layout() {
 				}
 			</header>
 			<Outlet />
+			<ScrollBtn />
 		</>
 	);
 }
