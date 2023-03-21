@@ -18,7 +18,7 @@ export type DetailsData = {
 export type CharacterData = {
 	info: {
 		count: number;
-		next: string;
+		next: string | null;
 		pages: number;
 		prev: string | null
 	},
