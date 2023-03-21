@@ -13,7 +13,7 @@ export function Card(props: CardData) {
 		img, title, text, id,
 	} = props;
 	return (
-		<section>
+		<div>
 			<Link to={`/details/${id}`}>
 				<div className={styles.card}>
 					<div className={styles.image}>
@@ -25,6 +25,6 @@ export function Card(props: CardData) {
 					</div>
 				</div>
 			</Link>
-		</section>
+		</div>
 	);
 }
