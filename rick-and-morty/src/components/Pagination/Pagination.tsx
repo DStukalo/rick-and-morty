@@ -27,8 +27,10 @@ export function Pagination(props: PaginationType) {
 				type="button"
 				className={!prev ? `${styles.button} ` : `${styles.prev}`}
 				onClick={() => {
-					updateCurPage(prev as string);
-					fetchCharacters(prev as string);
+					if (prev) {
+						updateCurPage(prev as string);
+						fetchCharacters(prev as string);
+					}
 				}}
 				disabled={!prev}
 			>
@@ -39,8 +41,10 @@ export function Pagination(props: PaginationType) {
 				type="button"
 				className={!next ? `${styles.button} ` : ` ${styles.next}`}
 				onClick={() => {
-					updateCurPage(next as string);
-					fetchCharacters(next as string);
+					if (next) {
+						updateCurPage(next);
+						fetchCharacters(next);
+					}
 				}}
 				disabled={!next}
 			>

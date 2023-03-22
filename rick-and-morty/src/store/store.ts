@@ -6,7 +6,7 @@ type CharactersState = {
 	characters: CharacterData | object,
 	loading: boolean,
 	errorMessage: string,
-	curPage: string,
+	curPage: string | null,
 	fetchCharacters: (arg0: string) => Promise<void>,
 	updateCurPage: (arg0: string) => void
 }
@@ -15,7 +15,7 @@ export const useCharacters = create<CharactersState>((set) => ({
 	characters: {},
 	loading: true,
 	errorMessage: '',
-	curPage: '',
+	curPage: null,
 	fetchCharacters: async (url: string) => {
 		set({ loading: true });
 		set({ errorMessage: '' });
