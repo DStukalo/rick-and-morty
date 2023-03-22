@@ -11,25 +11,28 @@ import { useCharacters } from '../../store/store';
 
 export function MainPage() {
 	const {
-		characters, loading, fetchCharacters, errorMessage, curPage,
+		characters, loading, fetchCharacters, errorMessage, curPage, updateCurPage,
 	} = useCharacters((state) => ({
 		characters: state.characters,
 		loading: state.loading,
 		fetchCharacters: state.fetchCharacters,
+		updateCurPage: state.updateCurPage,
 		errorMessage: state.errorMessage,
 		curPage: state.curPage,
 	}), shallow);
 
 	useEffect(() => {
 		document.title = 'Main Rick&Morty';
-		if (curPage !== '')fetchCharacters(curPage);
-		else {
+		if (curPage) {
+			fetchCharacters(curPage);
+			updateCurPage(curPage);
+		}	 else {
 			fetchCharacters(
 				sessionStorage.getItem('searchValue') ? `https://rickandmortyapi.com/api/character?name=${sessionStorage.getItem('searchValue')}`
 					: 'https://rickandmortyapi.com/api/character',
 			);
 		}
-	}, [curPage, fetchCharacters]);
+	}, [curPage, fetchCharacters, updateCurPage]);
 
 	return (
 		<div className={styles.container}>
