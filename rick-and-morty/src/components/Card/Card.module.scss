@@ -4,6 +4,7 @@
 	box-shadow: 0px 1px 5px var(--color-grey-a5), 0px 3px 4px var(--color-grey-a7), 0px 2px 4px var(--color-grey-a6);
 	border-radius: 4px;
 	transition: all 0.3s linear;
+	// overflow: hidden;
 
 	&:hover {
 		background-color: var(--color-grey-a7);
@@ -28,7 +29,6 @@
 		width: 240px;
 		height: 100%;
 		object-fit: cover;
-		border-radius: 4px 4px 0 0;
 
 		@media (max-width: 600px) {
 			width: 310px;

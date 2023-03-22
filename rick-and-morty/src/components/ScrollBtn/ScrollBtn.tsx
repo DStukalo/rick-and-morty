@@ -28,9 +28,7 @@ export function ScrollBtn() {
 			onClick={scrollToTop}
 			className={visible ? `${styles.button} ${styles.visible}` : ` ${styles.hidden} ${styles.button}`}
 		>
-			<span>
-				&#10514;
-			</span>
+			<div className={styles.up} />
 		</button>
 	);
 }

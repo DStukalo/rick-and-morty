@@ -1,16 +1,20 @@
 import { pageDefinition } from '../../function/pageDefinition';
+import { useCharacters } from '../../store/store';
 import styles from './Pagination.module.scss';
 
 type PaginationType = {
 	next: string | null;
 	pages: number;
 	prev: string | null;
-	cb: (arg0: string) => Promise<void>
 }
 
 export function Pagination(props: PaginationType) {
+	const { fetchCharacters, updateCurPage } = useCharacters((state) => ({
+		fetchCharacters: state.fetchCharacters,
+		updateCurPage: state.updateCurPage,
+	}));
 	const {
-		next, pages, prev, cb,
+		next, pages, prev,
 	} = props;
 
 	const curPage = pageDefinition({
@@ -22,7 +26,10 @@ export function Pagination(props: PaginationType) {
 			<button
 				type="button"
 				className={!prev ? `${styles.button} ` : `${styles.prev}`}
-				onClick={() => cb(prev as string)}
+				onClick={() => {
+					updateCurPage(prev as string);
+					fetchCharacters(prev as string);
+				}}
 				disabled={!prev}
 			>
 				Prev
@@ -31,7 +38,10 @@ export function Pagination(props: PaginationType) {
 			<button
 				type="button"
 				className={!next ? `${styles.button} ` : ` ${styles.next}`}
-				onClick={() => cb(next as string)}
+				onClick={() => {
+					updateCurPage(next as string);
+					fetchCharacters(next as string);
+				}}
 				disabled={!next}
 			>
 				Next

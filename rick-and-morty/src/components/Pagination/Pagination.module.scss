@@ -4,6 +4,9 @@
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+	@media (max-width: 600px) {
+		width: 170px;
+	}
 }
 
 .button {
@@ -15,7 +18,8 @@
 .prev,
 .next {
 	padding: 5px;
-	border-radius: 3px;
+	border-radius: 5px;
+	border: 2px solid var(--color-black-a2);
 	background-color: var(--color-grey-a3);
 	transition: all 0.3s ease;
 	cursor: pointer;
