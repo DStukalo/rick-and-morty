@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { shallow } from 'zustand/shallow';
 import { SearchItem } from '../../components/SearchItem/SearchItem';
 import { Card } from '../../components/Card/Card';
-import { generateId } from '../../function/generateId';
 import { Preloader } from '../../components/Preloader/Preloader';
 import { CharacterData } from '../../types/types';
 import styles from './MainPage.module.scss';
@@ -43,7 +42,7 @@ export function MainPage() {
 				<section className={styles.cards}>
 					{characters && loading === false && errorMessage === '' ? ((characters as CharacterData).results.map((el) => (
 						<Card
-							key={generateId()}
+							key={el.name + el.id}
 							img={el.image}
 							text={el.species}
 							title={el.name}
