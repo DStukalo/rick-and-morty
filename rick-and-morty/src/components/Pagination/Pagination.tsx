@@ -1,5 +1,5 @@
+import { useNavigate, useParams } from 'react-router-dom';
 import { pageDefinition } from '../../function/pageDefinition';
-import { useCharacters } from '../../store/store';
 import styles from './Pagination.module.scss';
 
 type PaginationType = {
@@ -9,14 +9,11 @@ type PaginationType = {
 }
 
 export function Pagination(props: PaginationType) {
-	const { fetchCharacters, updateCurPage } = useCharacters((state) => ({
-		fetchCharacters: state.fetchCharacters,
-		updateCurPage: state.updateCurPage,
-	}));
+	const { search, page } = useParams();
+	const navigate = useNavigate();
 	const {
 		next, pages, prev,
 	} = props;
-
 	const curPage = pageDefinition({
 		linkToNext: next, linkToPrev: prev,
 	});
@@ -28,8 +25,7 @@ export function Pagination(props: PaginationType) {
 				className={!prev ? `${styles.button} ` : `${styles.prev}`}
 				onClick={() => {
 					if (prev) {
-						updateCurPage(prev as string);
-						fetchCharacters(prev as string);
+						navigate(search ? `/${Number(page) - 1}/${search}` : `/${Number(page) - 1}`);
 					}
 				}}
 				disabled={!prev}
@@ -42,8 +38,7 @@ export function Pagination(props: PaginationType) {
 				className={!next ? `${styles.button} ` : ` ${styles.next}`}
 				onClick={() => {
 					if (next) {
-						updateCurPage(next);
-						fetchCharacters(next);
+						navigate(search ? `/${Number(page) + 1}/${search}` : `/${Number(page) + 1}`);
 					}
 				}}
 				disabled={!next}
