@@ -1,4 +1,5 @@
 import firebase from 'firebase/compat/app';
+import { browserLocalPersistence, setPersistence } from 'firebase/auth';
 import 'firebase/compat/auth';
 import { config } from './config';
 
@@ -9,4 +10,9 @@ export const Providers = {
 };
 
 export const auth = firebase.auth();
+
+(async () => {
+	await setPersistence(auth, browserLocalPersistence);
+})();
+
 export default Firebase;
