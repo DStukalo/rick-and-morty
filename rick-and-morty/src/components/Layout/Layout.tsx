@@ -1,16 +1,23 @@
 import { Outlet } from 'react-router-dom';
 import { useState } from 'react';
 import firebase from 'firebase/compat/app';
+import { browserSessionPersistence, signOut } from 'firebase/auth';
 import { Providers, auth } from '../../config/firebase';
 import { SignInWithSocialMedia } from '../../modules/auth';
 import styles from './Layout.module.scss';
 import { ScrollBtn } from '../ScrollBtn/ScrollBtn';
+import { Header } from '../Header/Header';
 
 export function Layout() {
 	const [authenticating, setAuthenticating] = useState<boolean>(false);
 	const [showAuth, setShowAuth] = useState<boolean>(true);
 	const [error, setError] = useState<string>('');
 	const nameLinkToAuth = (auth.currentUser && authenticating) ? `Hello ${auth.currentUser.displayName}` : 'Authentication';
+
+	function logOut() {
+		signOut(auth);
+		setAuthenticating(false);
+	}
 
 	function signInWithSocialMedia(provider: firebase.auth.AuthProvider) {
 		if (error !== '') setError('');
@@ -31,21 +38,7 @@ export function Layout() {
 
 	return (
 		<>
-			<header className={styles.header}>
-				{
-					showAuth ? (
-						<button
-							type="button"
-							onClick={() => signInWithSocialMedia(Providers.google)}
-							className={`${styles.btn} ${(authenticating ? styles.authenticating : styles.btn_auth)}`}
-						>
-							<p className={styles.text}>
-								{nameLinkToAuth}
-							</p>
-						</button>
-					) : null
-				}
-			</header>
+			<Header />
 			<Outlet />
 			<ScrollBtn />
 		</>
